@@ -15,8 +15,10 @@ public class RequestLoggingFilterConfig {
         filter.setIncludePayload(true);
         filter.setMaxPayloadLength(10000);
         filter.setIncludeHeaders(false);
-        filter.setBeforeMessageSuffix(" =========");
-        filter.setBeforeMessagePrefix("========== Request Info : ");
+        filter.setBeforeMessageSuffix(" =========\n================================================================================================");
+        filter.setBeforeMessagePrefix("\n================================================================================================\n========== Request : ");
+        filter.setAfterMessagePrefix("");
+        filter.setAfterMessageSuffix("");
         return filter;
     }
 }

@@ -42,9 +42,17 @@ public class MainController {
 		return "index";
 	}
 
+	@RequestMapping(value="/main")
+	public String main(@RequestParam Map<String,Object> param, Model model) {
+		String name = "";
+		
+		model.addAttribute("name",name);
+		return "main";
+	}	
+
 	@RequestMapping(value="/login", method={RequestMethod.GET,RequestMethod.POST})
 	public String login(){
-		return "login/login";
+		return "login";
 	}
 
 	@RequestMapping(value="/home")

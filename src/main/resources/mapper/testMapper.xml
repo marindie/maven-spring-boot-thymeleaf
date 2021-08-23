@@ -4,7 +4,8 @@
 
 <mapper namespace="com.unity.shop.dao.TestMapper">
     <select id="getUsers" parameterType="java.util.Map" resultType="java.util.Map">
-        SELECT 
+        /* TestMapper.getUsers */
+        SELECT
             *
         FROM T_USER
         WHERE 1=1

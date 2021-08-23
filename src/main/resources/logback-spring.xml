@@ -1,61 +1,49 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <configuration>
-
     <property name="LOGS" value="./logs" />
-
-    <appender name="Console"
-        class="ch.qos.logback.core.ConsoleAppender">
-        <layout class="ch.qos.logback.classic.PatternLayout">
-            <Pattern>
-                %white(%d{ISO8601}) [%highlight(%-5level)] %yellow(%C{1.}): %msg%n%throwable
-            </Pattern>
-        </layout>
-    </appender>
-
-    <appender name="RollingFile"
-        class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${LOGS}/shop.log</file>
-        <encoder
-            class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <Pattern>%d [%p] %C{1.}: %m%n</Pattern>
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss} %-5level - %msg%n</pattern>
         </encoder>
-
-        <rollingPolicy
-            class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <!-- rollover daily and when the file reaches 10 MegaBytes -->
-            <fileNamePattern>${LOGS}/archived/shop-%d{yyyy-MM-dd}.%i.log
-            </fileNamePattern>
-            <timeBasedFileNamingAndTriggeringPolicy
-                class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-                <maxFileSize>10MB</maxFileSize>
-            </timeBasedFileNamingAndTriggeringPolicy>
-        </rollingPolicy>
     </appender>
 
-    <!-- LOG "com.unity.shop.*" at TRACE level -->
-    <logger name="com.unity.shop" level="DEBUG" additivity="false">
-        <appender-ref ref="RollingFile" />
-        <appender-ref ref="Console" />
-    </logger>
+    <appender name="file_log" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOGS}/shop.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOGS}/archived/shop-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>100MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>[%d{HH:mm:ss.SSS}] {%thread} [%-5level] %logger{32} - %msg%n</pattern>
+            <!-- <pattern>%d{HH:mm:ss.SSS} {%thread} [%-5level] %C{1.} - %msg%n</pattern> -->
+        </encoder>
+    </appender>
 
-    <logger name="org.springframework" level="ERROR">
-        <appender-ref ref="RollingFile" />
-        <appender-ref ref="Console" />
-    </logger>
+    <logger name="com.unity.shop" level="DEBUG" additivity="false" />
 
-    <logger name="com.zaxxer.hikari" level="INFO">
-        <appender-ref ref="RollingFile" />
-        <appender-ref ref="Console" />
-    </logger>
+    
+    <logger name="ch.qos.logback" level="info" />
+    <logger name="org.thymeleaf" level="info" />    
+    <logger name="org.springframework" level="INFO" />
+    <logger name="org.springframework.batch" level="DEBUG"/>
+    <logger name="org.springframework.web.filter.CommonsRequestLoggingFilter" level="DEBUG"/>
+    
+    <logger name="org.mybatis.spring" level="info" />
+    <logger name="com.zaxxer.hikari" level="info" />
+    <logger name="org.quartz" level="info" />
+    
 
-    <logger name="org.springframework.orm.jpa.JpaTransactionManager" level="DEBUG">
-        <appender-ref ref="RollingFile" />
-        <appender-ref ref="Console" />
-    </logger>
-
-    <logger name="org.springframework.web.filter.CommonsRequestLoggingFilter" level="DEBUG" additivity="false">
-        <appender-ref ref="RollingFile" />
-        <appender-ref ref="Console" />
-    </logger>    
-
+    <logger name="jdbc"                level="OFF" />
+    <logger name="jdbc.sqlonly"        level="INFO" />  
+    <logger name="jdbc.resultsettable" level="INFO" />
+    <logger name="jdbc.sqltiming"      level="OFF" />
+    <logger name="log4jdbc.debug"      level="INFO" />
+    
+    <root level="debug">
+        <appender-ref ref="console" />
+        <appender-ref ref="file_log" />
+    </root>
 </configuration>
