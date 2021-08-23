@@ -1,4 +1,4 @@
-package com.unity.shop.controller.test;
+package com.unity.shop.controller;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.google.gson.Gson;
-import com.unity.shop.service.UserService;
+import com.unity.shop.service.TestService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,7 +25,7 @@ import lombok.extern.slf4j.Slf4j;
 public class TestController {
 	
 	@Autowired
-	private UserService userService;
+	private TestService testService;
 
 	@RequestMapping(value="/defaultPageCall", method={RequestMethod.GET,RequestMethod.POST})
 	public String defaultPageCall(@RequestParam Map<String,Object> param, Model model) {
@@ -88,7 +88,7 @@ public class TestController {
 		}
 
 		Map<String,Object> retMap = new HashMap<String,Object>();
-		retMap.put("data",userService.getUser(userId));
+		retMap.put("data",testService.getUser(param));
 		
 		return gson.toJson(retMap);
 	}
@@ -104,7 +104,7 @@ public class TestController {
 		}
 
 		Map<String,Object> retMap = new HashMap<String,Object>();
-		retMap.put("data",userService.getUser(userId));
+		retMap.put("data",testService.getUser(param));
 		
 		return gson.toJson(retMap);
 	}	

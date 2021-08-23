@@ -1,4 +1,4 @@
-package com.unity.shop.controller.main;
+package com.unity.shop.controller;
 
 import java.util.ArrayList;
 import java.util.HashMap;

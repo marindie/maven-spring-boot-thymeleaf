@@ -1,0 +1,11 @@
+2021-08-23 14:23:20,179 [DEBUG] org.springframework.web.filter.CommonsRequestLoggingFilter: ========== Request Info : GET /test/getUserName?id=1 =========
+2021-08-23 14:23:20,192 [DEBUG] com.unity.shop.controller.TestController: ====== param : {id=1}
+2021-08-23 14:23:20,195 [DEBUG] com.unity.shop.controller.TestController: ====== param json : {"id":"1"}
+2021-08-23 14:23:20,209 [INFO] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
+2021-08-23 14:23:20,253 [INFO] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed.
+2021-08-23 14:23:20,261 [DEBUG] org.apache.ibatis.logging.jdbc.BaseJdbcLogger: ==>  Preparing: SELECT * FROM T_USER WHERE 1=1 AND ID = ?
+2021-08-23 14:23:20,277 [DEBUG] org.apache.ibatis.logging.jdbc.BaseJdbcLogger: ==> Parameters: 1(String)
+2021-08-23 14:23:20,295 [DEBUG] org.apache.ibatis.logging.jdbc.BaseJdbcLogger: <==      Total: 1
+2021-08-23 14:23:20,314 [DEBUG] org.springframework.web.filter.CommonsRequestLoggingFilter: After request [GET /test/getUserName?id=1]
+2021-08-23 14:23:20,360 [DEBUG] org.springframework.web.filter.CommonsRequestLoggingFilter: ========== Request Info : GET /favicon.ico =========
+2021-08-23 14:23:20,367 [DEBUG] org.springframework.web.filter.CommonsRequestLoggingFilter: After request [GET /favicon.ico]

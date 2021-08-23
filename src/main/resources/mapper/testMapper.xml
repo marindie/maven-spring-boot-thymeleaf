@@ -3,47 +3,43 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.unity.shop.dao.TestMapper">
-    <select id="findList" resultType="student">
+    <select id="getUsers" parameterType="java.util.Map" resultType="java.util.Map">
         SELECT 
-            id,
-            name,
-            code,
-            save_date as 'saveDate'
-        FROM student
+            *
+        FROM T_USER
+        WHERE 1=1
+        AND ID = #{id}
     </select>
     
-    <select id="findOneByCode" parameterType="String" resultType="student">
+    <select id="findOneById" parameterType="java.util.Map" resultType="java.util.Map">
         SELECT
-            id,
-            name,
-            code,
-            save_date as 'saveDate'
-        FROM student
-        WHERE code = #{code}
+            ID,
+            USER_EMAIL,
+        FROM T_USER
+        WHERE id = #{id}
     </select>    
     
-    <insert id="save" parameterType="student">
-        INSERT INTO student (
-            name,
-            code,
-            save_date
+    <insert id="save" parameterType="java.util.Map">
+        INSERT INTO T_USER (
+            ID,
+            USER_EMAIL,
+            USER_PWD
         ) VALUES (
-            #{name},
-            #{code},
-            #{saveDate}
+            #{id},
+            #{userEmail}
+            #{userPwd}
         )
     </insert>
     
-    <update id="update" parameterType="student">
-        UPDATE student
+    <update id="update" parameterType="java.util.Map">
+        UPDATE T_USER
         SET 
-            name = #{name},
-            code = #{code},
-            save_date = #{saveDate}
+            ID = #{id},
+            USER_EMAIL = #{userEmail}
         WHERE id = #{id}
     </update>
     
-    <delete id = "deleteById" parameterType="int">
-        DELETE FROM student WHERE id = #{id}
+    <delete id = "deleteById" parameterType="java.util.Map">
+        DELETE FROM T_USER WHERE id = #{id}
     </delete>
 </mapper>
