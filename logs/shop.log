@@ -310,3 +310,55 @@
 [17:56:57.809] [INFO ] com.unity.shop.ShopApplication - Starting ShopApplication using Java 11.0.12 on DESKTOP-DVJ886C with PID 13844 (D:\github\maven-spring-boot-thymeleaf\target\classes started by wony in d:\github\maven-spring-boot-thymeleaf)
 [17:56:57.809] [DEBUG] com.unity.shop.ShopApplication - Running with Spring Boot v2.5.4, Spring v5.3.9
 [17:56:57.809] [INFO ] com.unity.shop.ShopApplication - The following profiles are active: dev
+[17:56:57.950] [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[17:56:57.950] [INFO ] o.a.c.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-127.0.0.1-8080"]
+[17:56:57.950] [INFO ] o.a.c.core.StandardService - Starting service [Tomcat]
+[17:56:57.950] [INFO ] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.52]
+[17:56:57.963] [INFO ] o.a.c.c.C.[.[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[17:56:57.963] [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 153 ms
+[17:56:57.969] [DEBUG] o.s.w.f.CommonsRequestLoggingFilter - Filter 'logFilter' configured for use
+[17:56:58.018] [DEBUG] _.s.w.s.HandlerMapping.Mappings - 
+	c.u.s.c.LoginController:
+	{[GET, POST] [/login]}: login(Map,Model,RedirectAttributes)
+[17:56:58.018] [DEBUG] _.s.w.s.HandlerMapping.Mappings - 
+	c.u.s.c.MainController:
+	{ [/main]}: main(Map,Model)
+	{[GET, POST] [/getName]}: getName(Map,Model)
+	{ [/home]}: home(Map,Model)
+	{[GET, POST] [/]}: mainView(Map,Model)
+[17:56:58.019] [DEBUG] _.s.w.s.HandlerMapping.Mappings - 
+	c.u.s.c.TestController:
+	{[GET, POST] [/test/getUserName]}: getUserName(Map,Model)
+	{POST [/test/getUserNameJson], produces [application/json]}: getUserNameJson(Map,Model)
+	{[GET, POST] [/test/defaultPageCall]}: defaultPageCall(Map,Model)
+	{[GET, POST] [/test/changePartOfDomTest]}: changePartOfDom(Map,Model)
+[17:56:58.019] [DEBUG] _.s.w.s.HandlerMapping.Mappings - 
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error]}: error(HttpServletRequest)
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+[17:56:58.021] [INFO ] o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+[17:56:58.024] [DEBUG] _.s.w.s.HandlerMapping.Mappings - 'beanNameHandlerMapping' {}
+[17:56:58.026] [DEBUG] _.s.w.s.HandlerMapping.Mappings - 'resourceHandlerMapping' {/webjars/**=ResourceHttpRequestHandler [Classpath [META-INF/resources/webjars/]], /**=ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]}
+[17:56:58.031] [WARN ] o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+[17:56:58.046] [INFO ] o.q.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+[17:56:58.046] [INFO ] o.q.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[17:56:58.047] [INFO ] org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.3.2 created.
+[17:56:58.047] [INFO ] org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+[17:56:58.047] [INFO ] org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[17:56:58.047] [INFO ] o.q.impl.StdSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+[17:56:58.047] [INFO ] o.q.impl.StdSchedulerFactory - Quartz scheduler version: 2.3.2
+[17:56:58.047] [INFO ] org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@9b535e6
+[17:56:58.051] [INFO ] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[17:56:58.055] [INFO ] o.a.c.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-127.0.0.1-8080"]
+[17:56:58.056] [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+[17:56:58.057] [INFO ] o.s.s.q.SchedulerFactoryBean - Starting Quartz Scheduler now
+[17:56:58.057] [INFO ] org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+[17:56:58.058] [INFO ] com.unity.shop.ShopApplication - Started ShopApplication in 0.27 seconds (JVM running for 197.183)
+[17:56:58.059] [INFO ] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
