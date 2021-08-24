@@ -34,7 +34,6 @@ public class MainController {
 		}
 
 		model.addAttribute("tasks",taskList);
-		model.addAttribute("name",name);
 		model.addAttribute("message","wony");
 		
 		return "login";
