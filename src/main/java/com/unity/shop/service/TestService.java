@@ -17,4 +17,7 @@ public class TestService {
 	public List<Map<String,Object>> getUser(Map<String,Object> param){
 		return testMapper.getUsers(param);
 	}
+	public Map<String,Object> findUserById(Map<String,Object> param){
+		return testMapper.findUserById(param);
+	}
 }

@@ -25,7 +25,7 @@
   </head>
   <body class="text-center">
 	<main class="form-signin">
-		<form action="/main" method="POST">
+		<form action="/login" method="POST" id="frm">
 			<img class="mb-4" src="/img/bootstrap-logo.svg" alt="" width="72" height="57">
 			<h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
@@ -43,13 +43,23 @@
 				<input type="checkbox" value="remember-me"> Remember me
 			</label>
 			</div>
-			<button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+			<button class="w-100 btn btn-lg btn-primary" id="loginBtn">Sign in</button>
 			<p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
 		</form>
 	</main>
 	<script th:inline="javascript">
 		$(document).ready(function(){
 			console.log('login start');
+		}).on("click","#loginBtn",function(){
+			if(!$("#userEmail").val()){
+				alert("Email is empty");
+				return false;
+			}
+			if(!$("#userPwd").val()){
+				alert("Password is empty");
+				return false;
+			}
+			$("#frm").submit();
 		});
 	</script>
   </body>

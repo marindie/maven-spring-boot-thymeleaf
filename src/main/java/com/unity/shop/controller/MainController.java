@@ -39,7 +39,7 @@ public class MainController {
 		model.addAttribute("name",name);
 		model.addAttribute("message","wony");
 		
-		return "index";
+		return "login";
 	}
 
 	@RequestMapping(value="/main")
@@ -49,11 +49,6 @@ public class MainController {
 		model.addAttribute("name",name);
 		return "main";
 	}	
-
-	@RequestMapping(value="/login", method={RequestMethod.GET,RequestMethod.POST})
-	public String login(){
-		return "login";
-	}
 
 	@RequestMapping(value="/home")
 	public String home(@RequestParam Map<String,Object> param, Model model) {

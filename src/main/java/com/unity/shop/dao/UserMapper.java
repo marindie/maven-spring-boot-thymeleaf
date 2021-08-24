@@ -6,7 +6,7 @@ import java.util.Map;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
-public interface TestMapper {
-    public List<Map<String,Object>> getUsers(Map<String,Object> param);
+public interface UserMapper {
     public Map<String,Object> findUserById(Map<String,Object> param);
+    public List<Map<String,Object>> getUsers(Map<String,Object> param);
 }
