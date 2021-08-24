@@ -17,24 +17,23 @@
             <maxHistory>30</maxHistory>
         </rollingPolicy>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <pattern>[%d{HH:mm:ss.SSS}] {%thread} [%-5level] %logger{32} - %msg%n</pattern>
+            <pattern>[%d{HH:mm:ss.SSS}] [%-5level] %logger{32} - %msg%n</pattern>
             <!-- <pattern>%d{HH:mm:ss.SSS} {%thread} [%-5level] %C{1.} - %msg%n</pattern> -->
         </encoder>
     </appender>
 
-    <logger name="com.unity.shop" level="DEBUG" additivity="false" />
+    <logger name="com.unity.shop" level="DEBUG"/>
 
-    
     <logger name="ch.qos.logback" level="info" />
     <logger name="org.thymeleaf" level="info" />    
-    <logger name="org.springframework" level="INFO" />
+    <logger name="org.springframework" level="info" />
     <logger name="org.springframework.batch" level="DEBUG"/>
     <logger name="org.springframework.web.filter.CommonsRequestLoggingFilter" level="DEBUG"/>
     
     <logger name="org.mybatis.spring" level="info" />
     <logger name="com.zaxxer.hikari" level="info" />
     <logger name="org.quartz" level="info" />
-    
+    <logger name="org.slf4j" level="INFO" />
 
     <logger name="jdbc"                level="OFF" />
     <logger name="jdbc.sqlonly"        level="INFO" />  

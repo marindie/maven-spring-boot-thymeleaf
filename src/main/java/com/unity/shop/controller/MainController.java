@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.google.gson.Gson;
+import com.unity.shop.common.Utils;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +17,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.extern.slf4j.Slf4j;
 
-
 @Controller
 @RequestMapping("/")
 @Slf4j
@@ -24,8 +24,6 @@ public class MainController {
 
 	@RequestMapping(value="/", method={RequestMethod.GET,RequestMethod.POST})
 	public String mainView(@RequestParam Map<String,Object> param, Model model) {
-		String name = "WONY";
-		log.debug("========= WONY ===========");
 
 		//List<Map<String,Object>> taskList = new ArrayList<Map<String,Object>>();
 		List<String> taskList = new ArrayList<String>();
@@ -44,10 +42,13 @@ public class MainController {
 
 	@RequestMapping(value="/main")
 	public String main(@RequestParam Map<String,Object> param, Model model) {
-		String name = "";
-		
-		model.addAttribute("name",name);
-		return "main";
+		log.info("==============================");
+		log.info("============ Main ============");
+		if(!Utils.isEmpty(model)){
+			log.info(model.getAttribute("user").toString());
+		}
+		log.info("==============================");
+		return "main00001";
 	}	
 
 	@RequestMapping(value="/home")
