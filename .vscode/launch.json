@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ShopApplication<shop>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.unity.shop.ShopApplication",
+            "projectName": "shop",
+            "args": "--spring.profiles.active=dev"
+        }
+    ]
+}

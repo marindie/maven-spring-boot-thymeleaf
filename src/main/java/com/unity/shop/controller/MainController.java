@@ -47,7 +47,7 @@ public class MainController {
 			log.info(model.getAttribute("user").toString());
 		}
 		log.info("==============================");
-		return "main00001";
+		return "main";
 	}	
 
 	@RequestMapping(value="/home")
